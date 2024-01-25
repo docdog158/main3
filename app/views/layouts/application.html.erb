@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2Ver2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <script src="https://kit.fontawesome.com/9e7b8f8705.js" crossorigin="anonymous"></script>
+    
+    <%# chart.jsの導入 %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <%# END %>
+    
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <%= render 'layouts/header' %>
+    
+      <main>
+        
+        <div class="d-flex justify-content-center mb-2">
+          <%= render "searches/form" %>
+        </div>
+        <p><%= flash[:notice] %></p>
+        
+        <%= yield %>
+        
+      </main>
+    <%= render 'layouts/footer' %>
+  </body>
+</html>
